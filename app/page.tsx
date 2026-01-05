@@ -102,7 +102,7 @@ export default function Home() {
 
       const rows: TxRow[] = [];
 
-      function pushLogs(logs: Log[], direction: "IN" | "OUT") {
+      function pushLogs(logs: any[], direction: "IN" | "OUT") {
         for (const l of logs) {
           const args = (l as any).args as {
             from: `0x${string}`;
