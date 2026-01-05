@@ -79,8 +79,8 @@ export default function Home() {
 
       // recent transfers (fast approach: scan recent blocks)
       const latest = await client.getBlockNumber();
-      const LOOKBACK_BLOCKS = 20_000n; // adjust if you want deeper history
-      const fromBlock = latest > LOOKBACK_BLOCKS ? latest - LOOKBACK_BLOCKS : 0n;
+      const LOOKBACK_BLOCKS = BigInt(20000);
+      const fromBlock = latest > LOOKBACK_BLOCKS ? latest - LOOKBACK_BLOCKS : BigInt(0);
 
       // Incoming transfers to address
       const incomingLogs = await client.getLogs({
